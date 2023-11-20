@@ -25,10 +25,10 @@ def get_num_revisions_and_authors(file_list, path, from_, to):
     }
 
     gr = Git(path)
-    from_commit = gr.get_commit_from_tag(from_).committer_date
-    to_commit = gr.get_commit_from_tag(to).committer_date
+    from_commit_date = gr.get_commit_from_tag(from_).committer_date
+    to_commit_date = gr.get_commit_from_tag(to).committer_date
 
-    for commit in Repository(path, since=from_commit, to=to_commit).traverse_commits():
+    for commit in Repository(path, since=from_commit_date, to=to_commit_date).traverse_commits():
         for file in commit.modified_files:
             filename = file.filename
             if filename not in result:
@@ -56,7 +56,7 @@ def save_as_json(result, path):
     :return: None
     """
     with open(path, "w") as f:
-        json.dump(result, f)
+        json.dump(result, f, indent=4)
 
     print("Saved as {}".format(path))
 
@@ -68,4 +68,4 @@ if __name__ == "__main__":
     file_list = list_all_entities(path, tag)
     from_ = "3.5.1"
     result = get_num_revisions_and_authors(file_list, path, from_, tag)
-    save_as_json(result, "./result.json")
+    save_as_json(result, "./ex_1_result.json")
