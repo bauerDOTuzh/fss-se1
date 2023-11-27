@@ -70,11 +70,10 @@ def get_number_of_code_changes(json):
         print(f"File {file.split('\\')[-1]} has {result[file.split('\\')[-1]]} number of code changes")
     return result
 
-
 if __name__ == "__main__":
     path = "./kafka"
     java_files = get_all_java_files(path)
-    cyclcomatic_complexity = get_cyclomatic_complexity(java_files)
+    cyclomatic_complexity = get_cyclomatic_complexity(java_files)
     lines_of_code = get_lines_of_code(java_files)
     json_ = json.load(open("ex_1_result.json", "r"))
     number_of_code_changes = get_number_of_code_changes(json_)
