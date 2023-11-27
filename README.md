@@ -1,6 +1,8 @@
 # Report:
 <!-- Link to report -->
 [Report](https://docs.google.com/document/d/1_MHXg0D9LXmSrxtOTKKcHcVyk_1x1iFRm9Qbow-DLyI/edit?usp=sharing)
+<!-- Link to ex3 jsons -->
+[Ex. 3 Jsons](https://drive.google.com/file/d/1ofsGXDGlxu_02poISej9dY8s0DQLpMZR/view?usp=sharing)
 
 
 # EX3 -> checksums
